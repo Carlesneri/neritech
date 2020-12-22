@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "neritechdev",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

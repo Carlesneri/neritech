@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+	--bgc: #232326;
+	--blue: #010326;
+	--yellow: hsl(45, 71%, 32%);
+	--brown: #594A1B;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+body{
+	font-family: 'Titillium Web', sans-serif;
+	/* background: linear-gradient(to bottom , #484850, #232326); */
+	background-color: var(--bgc);
+	color: var(--yellow);
+}
+a{
+	color: var(--yellow);
+	text-decoration: none;
+}
+a:hover {
+	color: white;
+}
+.link {
+	cursor: pointer;
+	transition: all .2s ease;
+	font-weight: 600;
+}
+.link:hover {
+	color: white;
+}
+
