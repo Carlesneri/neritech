@@ -1,4 +1,16 @@
 <script>
+    import firebase from 'firebase/app';
+    import 'firebase/firestore';
+    import 'firebase/auth';
+
+    import firebaseConfig from '../firebase-config';
+
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().signInAnonymously()
+
+    const db = firebase.firestore()
+    
     let name;
     let email;
     let text;
@@ -12,21 +24,27 @@
             message = 'Por favor, completa todos los campos'
         } else {
             message = "Enviando..."
-            console.log(name, email, text);
+
             try {
                 await sendForm(name, email, text);
                 name = email = text = ''
                 message = "El mensaje se ha enviado correctamente"
 
             } catch (error) {
-                message = error
+                message = "No se ha podido enviar el mensaje"
 
             }
         }
     }
 
-    function sendForm(name, email, text) {
-        // throw new Error("Lo sentimos, ha habido un error" );
+    async function sendForm(name, email, text) {
+        const date = Date().toLocaleString()
+        await db.collection('messages').doc().set({
+            name,
+            email,
+            text, 
+            date
+        })
     }
 
 </script>

@@ -4,6 +4,8 @@
 	--blue: #010326;
 	--yellow: hsl(45, 71%, 32%);
 	--brown: #594A1B;
+	--header-width: 1000px;
+	--main-width: 750px;
 }
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -22,6 +24,7 @@ body{
 a{
 	color: var(--yellow);
 	text-decoration: none;
+	transition: all .2s ease;
 }
 a:hover {
 	color: white;

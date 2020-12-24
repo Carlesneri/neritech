@@ -1,8 +1,9 @@
 <script>
-    const year = new Date().getFullYear()
+    const year = new Date().getFullYear();
 </script>
 
 <footer>
+
     <div class="logos">
         <div class="logo">
             <img src="./html.png" alt="html">

@@ -1,9 +1,11 @@
 <script>
 	import ContactForm from './ContactForm.svelte';
 	import Info from './Info.svelte';
+	import Portfolio from './Portfolio.svelte';
 </script>
 
 <main>
+
 
 	<div class="text">
 		<h1>
@@ -11,7 +13,7 @@
 		</h1>
 		<ul>
 			<li>
-				Desarrollo y despliegue de sitios web totalmente personalizadas. 
+				Desarrollo y despliegue de sitios web totalmente personalizados. 
 			</li>
 			<li>
 				Páginas únicas y personalizadas sin plantillas.
@@ -32,26 +34,16 @@
 	
 	<Info />
 
+	<Portfolio />
+
 </main>
 
 <style>
 	main {
-		/* position: relative; */
-		max-width: 750px;
 		margin: 1rem auto;	
 		padding: 0 1rem;
 		text-align: center;
-		/* z-index: 1; */
 	}
-	/* .curve {
-		background-color: var(--bgc);
-		height: 400px;
-		width: 100%;
-		border-radius: 50% 50% 0 0;
-		position: absolute;
-		top: -3em;
-		z-index: -1;
-	} */
 	.text {
 		position: relative;
 		margin: 2rem auto 0;

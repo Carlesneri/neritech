@@ -27,11 +27,8 @@
 </nav>
 
 <style>
-    nav {
-        position: absolute;
-        width: 100%;
-    }
     .nav {
+        max-width: var(--header-width);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -42,11 +39,9 @@
         font-size: 2.5em;
         font-weight: 900;
         color: white;
-        /* color: var(--yellow); */
     }
     nav ul{
         display: flex;
-        /* padding: 1rem; */
     }
     nav li {
         margin: 0 1rem;
@@ -57,12 +52,10 @@
         transition: all .2s ease;
     }
     @media(max-width: 400px) {
-        nav {
-            position: relative;
-        }
         .nav {
             flex-direction: column;
         }
     }
+
 
 </style>
