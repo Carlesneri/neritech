@@ -27,8 +27,11 @@
 
             try {
                 await sendForm(name, email, text);
+
+                message = `El mensaje se ha enviado correctamente.\nEn breve serás respondido en el correo ${email}. Recuerda revisar la bandeja de correo no deseado.\nGracias.`
+
                 name = email = text = ''
-                message = "El mensaje se ha enviado correctamente"
+
 
             } catch (error) {
                 message = "No se ha podido enviar el mensaje"
