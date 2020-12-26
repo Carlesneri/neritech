@@ -51,14 +51,14 @@
                 </a>
             </div>
         </div>
-        <div class="web" title="https://buscadorempleo.org/">
+        <div class="web" title="https://neritechdev.web.app/">
             <div class="image">
                 <img src="./buscadorempleo.png" alt="buscadorempleo">
             </div>
             <div class="title">
-                <a href="https://buscadorempleo.org/" target="_blank">
+                <a href="https://neritechdev.web.app/" target="_blank">
                     <h3>
-                        Buscadorempleo.org
+                        neritechdev.web.app
                     </h3>
                 </a>
             </div>
@@ -98,8 +98,6 @@
         max-width: 250px; 
     }
     .image img {
-        /* border-radius: 5px; */
         width: 100%;
-        /* border: 1px solid var(--yellow); */
     }
 </style>
