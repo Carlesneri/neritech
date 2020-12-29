@@ -8,7 +8,9 @@
 	let modalOpen = false;
 
 	function openModal(modal) {
+		
 		modalOpen = modal;
+
 	}
 
 </script>

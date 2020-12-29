@@ -51,14 +51,14 @@
                 </a>
             </div>
         </div>
-        <div class="web" title="https://neritechdev.web.app/">
+        <div class="web" title="https://buscadorempleo.org/">
             <div class="image">
                 <img src="./buscadorempleo.png" alt="buscadorempleo">
             </div>
             <div class="title">
-                <a href="https://neritechdev.web.app/" target="_blank">
+                <a href="https://buscadorempleo.org/" target="_blank">
                     <h3>
-                        neritechdev.web.app
+                        Buscadorempleo.org
                     </h3>
                 </a>
             </div>

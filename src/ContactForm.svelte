@@ -2,6 +2,7 @@
     import firebase from 'firebase/app';
     import 'firebase/firestore';
     import 'firebase/auth';
+    import {scale, slide, fly, fade} from 'svelte/transition';
 
     import firebaseConfig from '../firebase-config';
 
@@ -17,24 +18,70 @@
 
     let message = ''
 
+    let isSending = false
+
+    
     async function submitForm(event){
         event.preventDefault()
 
-        if(!name || !email || !text) {
+        let isSendingMessage 
+
+        if(!name.trim() || !email || !text.trim()) {
             message = 'Por favor, completa todos los campos'
         } else {
-            message = "Enviando..."
+            isSending = true
+
+            if(isSending){
+                    setTimeout(() => isSending && (message = 'Enviando      '), 300)
+                    setTimeout(() => isSending && (message = `Enviando .    `), 1300)
+                    setTimeout(() => isSending && (message = `Enviando . .  `), 2300)
+                    setTimeout(() => isSending && (message = `Enviando . . .`), 3300)
+                }
+
+            // message = 'Enviando      '
+            isSendingMessage = setInterval(() => {
+                console.log('Interval');
+
+                if(isSending){
+                    setTimeout(() => isSending && (message = 'Enviando      '), 300)
+                    setTimeout(() => isSending && (message = `Enviando .    `), 1300)
+                    setTimeout(() => isSending && (message = `Enviando . .  `), 2300)
+                    setTimeout(() => isSending && (message = `Enviando . . .`), 3300)
+                }
+            }, 4300)
 
             try {
-                await sendForm(name, email, text);
+                clearInterval(isSendingMessage)
+                
+                setTimeout(async () => {
+                    isSending = false
 
-                message = `El mensaje se ha enviado correctamente.\nEn breve serás respondido en el correo ${email}. Recuerda revisar la bandeja de correo no deseado.\nGracias.`
+                    if(!navigator.onLine) {
+                        message = 'No estás conectado a internet. Conéctate y vuelve a enviar el formulario.'    
 
-                name = email = text = ''
+                    }else{
+                        await sendForm(name, email, text);
+                
+                        message = `El mensaje se ha enviado correctamente.\n
+                        En breve serás respondido en el correo ${email}.\n 
+                        Recuerda revisar la bandeja de correo no deseado.\n
+                        Gracias.`
 
+                        name = email = text = ''
+
+                    }                    
+
+                }, 4300)  
 
             } catch (error) {
-                message = "No se ha podido enviar el mensaje"
+                isSending = false
+
+                clearInterval(isSendingMessage)
+
+                setTimeout(() => {
+                    message = "No se ha podido enviar el mensaje"
+
+                }, 4300)
 
             }
         }
@@ -42,12 +89,13 @@
 
     async function sendForm(name, email, text) {
         const date = Date().toLocaleString()
-        await db.collection('messages').doc().set({
+        return await db.collection('messages').doc().set({
             name,
             email,
             text, 
             date
         })
+        
     }
 
 </script>
@@ -61,8 +109,12 @@
         <button on:click={submitForm} >
             Enviar
         </button>
-        <div class="message">
-            {message}
+        <div class="message-wrapper">
+            {#if message}
+            <p class="message" transition:scale>
+                {message}
+            </p>
+        {/if}
         </div>
     </form>
 </div>
@@ -85,7 +137,11 @@
         text-align: center;
         font-size: 2em;
     }
+    .message-wrapper {
+        min-height: 2em;
+    }
     .message {
+        font-family: inherit;
         font-size: 1.3rem;
         text-align: center;
     }

@@ -80,6 +80,11 @@
         .foot {
             flex-direction: column;
             flex-flow: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+        .link {
+            width: fit-content;
         }
     }
 </style>

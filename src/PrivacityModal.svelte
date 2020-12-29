@@ -55,6 +55,6 @@
         Este sitio web no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido por un juez con un orden judicial.
     </p>
     <p>
-        buscarempleo.org se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+        neritechdev.web.app se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
     </p>
 </section>

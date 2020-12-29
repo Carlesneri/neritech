@@ -4,21 +4,33 @@
     import CookiesModal from './CookiesModal.svelte'
     import { scale } from 'svelte/transition'
     
-    export let modalOpen, openModal
+    export let modalOpen, openModal;
 
+    function scrollTop(){
+        const modalElement = document.getElementById('modal') 
         
+        modalElement.scrollTop = 0
+
+    }
+            
 </script>
 
-<div class="modal" transition:scale>
+<div class="modal" id="modal" transition:scale >
     <div class="modal-content">
         {#if modalOpen === 'legal'}
-            <LegalAdModal {openModal}/>
+            <div transition:scale={{delay: 50}}>
+                <LegalAdModal {openModal} {scrollTop}/>
+            </div>
         {:else if  modalOpen === 'privacity'}
-            <Privacity {openModal}/>
+            <div transition:scale={{delay: 50}}>
+                <Privacity />
+            </div>
         {:else if  modalOpen === 'cookies'}
-            <CookiesModal />
+            <div transition:scale={{delay: 50}}>
+                <CookiesModal />
+            </div>
         {/if}
-        <button class="link" on:click={() => openModal(false)}>
+        <button class="link" on:click={openModal(false)}>
             Cerrar
         </button>
     </div>
@@ -35,6 +47,7 @@
         top: 0;
         margin: 2rem;
         overflow: auto;
+        scroll-behavior: smooth;
     }
     .modal-content{
         min-width: 70%;
