@@ -12,21 +12,25 @@
 
     const db = firebase.firestore()
     
-    let name;
-    let email;
-    let text;
+    let name = '';
+    let email = '';
+    let text = '';
 
     let message = ''
 
     let isSending = false
 
+    let emailPattern = /^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},*[\W]*)+$/
+
     
     async function submitForm(event){
         event.preventDefault()
 
+        email = emailPattern.test(email) ? email : ''
+
         let isSendingMessage 
 
-        if(!name.trim() || !email || !text.trim()) {
+        if(!name.trim() || !email.trim() || !text.trim()) {
             message = 'Por favor, completa todos los campos'
         } else {
             isSending = true
@@ -103,10 +107,10 @@
 <div class="contact-form-wrapper" id="contact">
     <form id="contactForm">
         <div class="title">Formulario de contacto</div>
-        <input type="text" placeholder="Nombre" required bind:value={name}>
-        <input type="email" placeholder="Email" required bind:value={email}>
-        <textarea name="text" id="text" rows="5" bind:value={text} placeholder="Escribe aquí tu comentario" required></textarea>
-        <button on:click={submitForm} >
+        <input type="text" placeholder="Nombre"  bind:value={name}>
+        <input type="email" placeholder="Email"  bind:value={email}>
+        <textarea name="text" id="text" rows="5" bind:value={text} placeholder="Escribe aquí tu comentario"></textarea>
+        <button type="submit" on:click={submitForm} >
             Enviar
         </button>
         <div class="message-wrapper">
