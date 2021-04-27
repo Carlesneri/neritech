@@ -3,6 +3,18 @@
         Mi Portfolio
     </h2>
     <div class="webs">
+        <div class="web" title="https://repuestos.site/">
+            <div class="image">
+                <img src="./repuestos.png" alt="lightenpic">
+            </div>
+            <div class="title">
+                <a href="https://repuestos.site/" target="_blank">
+                    <h3>
+                        Repuestos.site
+                    </h3>
+                </a>
+            </div>
+        </div>
         <div class="web" title="https://lightenpic.pro/">
             <div class="image">
                 <img src="./lightenpic.png" alt="lightenpic">
@@ -39,14 +51,14 @@
                 </a>
             </div>
         </div>
-        <div class="web" title="https://letstar.site/">
+        <div class="web" title="https://letstar.work/">
             <div class="image">
                 <img src="./letstar.png" alt="letstar">
             </div>
             <div class="title">
-                <a href="https://letstar.site/" target="_blank">
+                <a href="https://letstar.work/" target="_blank">
                     <h3>
-                        Letstar.site
+                        Letstar.work
                     </h3>
                 </a>
             </div>

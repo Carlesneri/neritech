@@ -2,7 +2,7 @@
     import firebase from 'firebase/app';
     import 'firebase/firestore';
     import 'firebase/auth';
-    import {scale, slide, fly, fade} from 'svelte/transition';
+    import {scale} from 'svelte/transition';
 
     import firebaseConfig from '../firebase-config';
 
@@ -44,7 +44,7 @@
 
             // message = 'Enviando      '
             isSendingMessage = setInterval(() => {
-                console.log('Interval');
+                // console.log('Interval');
 
                 if(isSending){
                     setTimeout(() => isSending && (message = 'Enviando      '), 300)
