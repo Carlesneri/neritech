@@ -64,14 +64,19 @@
                         message = 'No estás conectado a internet. Conéctate y vuelve a enviar el formulario.'    
 
                     }else{
-                        await sendForm(name, email, text);
-                
-                        message = `El mensaje se ha enviado correctamente.\n
-                        En breve serás respondido en el correo ${email}.\n 
-                        Recuerda revisar la bandeja de correo no deseado.\n
-                        Gracias.`
-
-                        name = email = text = ''
+                        try {
+                            await sendForm(name, email, text);
+                    
+                            message = `El mensaje se ha enviado correctamente.\n
+                            En breve serás respondido en el correo ${email}.\n 
+                            Recuerda revisar la bandeja de correo no deseado.\n
+                            Gracias.`
+    
+                            name = email = text = ''
+                            
+                        } catch (error) {
+                            console.error(error)
+                        }
 
                     }                    
 

@@ -63,14 +63,14 @@
                 </a>
             </div>
         </div>
-        <div class="web" title="https://buscadorempleo.org/">
+        <div class="web" title="https://jobs.neri.link/">
             <div class="image">
                 <img src="./buscadorempleo.png" alt="buscadorempleo">
             </div>
             <div class="title">
-                <a href="https://buscadorempleo.org/" target="_blank">
+                <a href="https://jobs.neri.link/" target="_blank">
                     <h3>
-                        Buscadorempleo.org
+                        Buscador Empleo
                     </h3>
                 </a>
             </div>
@@ -83,6 +83,18 @@
                 <a href="https://carlesneri.blogspot.com/" target="_blank">
                     <h3>
                         Carlesneri.blogspot.com
+                    </h3>
+                </a>
+            </div>
+        </div>
+        <div class="web" title="http://coronachat.neri.link/">
+            <div class="image">
+                <img src="./coronachat.png" alt="coronachat web sample">
+            </div>
+            <div class="title">
+                <a href="http://coronachat.neri.link/" target="_blank">
+                    <h3>
+                        Coronachat
                     </h3>
                 </a>
             </div>

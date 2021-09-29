@@ -14,7 +14,7 @@ dotenv.config()
 // });
 
 exports.sendEmail = functions.firestore.document('messages/{messageId}').onCreate(async (snap, context) => {
-   
+
     const { name, email, text, date } = snap.data()
     
     try {
