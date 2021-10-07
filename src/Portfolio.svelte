@@ -68,7 +68,7 @@
                 <img src="./buscadorempleo.png" alt="buscadorempleo">
             </div>
             <div class="title">
-                <a href="https://jobs.neri.link/" target="_blank">
+                <a href="https://buscadorempleo-47020.web.app/" target="_blank">
                     <h3>
                         Buscador Empleo
                     </h3>
